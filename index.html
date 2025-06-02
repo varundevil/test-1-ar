@@ -9,7 +9,16 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div id="container"></div>
+  <div id="loading-screen">
+    <div class="loader">Loading AR experience...</div>
+  </div>
+
+  <div id="start-screen">
+    <button id="start-button">Start Now</button>
+    <div id="error-message"></div>
+  </div>
+
+  <div id="container" style="display:none;"></div>
   <script type="module" src="main.js"></script>
 </body>
 </html>
