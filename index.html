@@ -1,24 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Web AR with Video</title>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.5/dist/mindar-image-three.prod.js"></script>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <div id="loading-screen">
-    <div class="loader">Loading AR experience...</div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web AR App</title>
+    <style>
+      html, body {
+        margin: 0; padding: 0;
+        overflow: hidden;
+        background: black;
+        font-family: Arial, sans-serif;
+      }
 
-  <div id="start-screen">
-    <button id="start-button">Start Now</button>
-    <div id="error-message"></div>
-  </div>
+      #loading-screen, #start-screen {
+        position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        background: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 10;
+      }
 
-  <div id="container" style="display:none;"></div>
-  <script type="module" src="main.js"></script>
-</body>
+      #start-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: white;
+        color: black;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+
+      #error-message {
+        color: red;
+        margin-top: 10px;
+      }
+
+      #container {
+        width: 100vw;
+        height: 100vh;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loading-screen">Loading AR experience...</div>
+
+    <div id="start-screen" style="display: none;">
+      <div>Welcome to the AR experience</div>
+      <button id="start-button">Start Now</button>
+      <div id="error-message"></div>
+    </div>
+
+    <div id="container"></div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>
